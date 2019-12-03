@@ -27,19 +27,19 @@ const social = [
 ];
 
 const Navigation = ({ path }) => {
-  // const {
-  //   site: {
-  //     siteMetadata: { name },
-  //   },
-  // } = useStaticQuery(graphql`
-  //   {
-  //     site {
-  //       siteMetadata {
-  //         name
-  //       }
-  //     }
-  //   }
-  // `);
+  const {
+    site: {
+      siteMetadata: { name },
+    },
+  } = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          name
+        }
+      }
+    }
+  `);
 
   return (
     <StyledNavigation>
