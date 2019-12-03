@@ -27,25 +27,25 @@ const social = [
 ];
 
 const Navigation = ({ path }) => {
-  // const {
-  //   site: {
-  //     siteMetadata: { name },
-  //   },
-  // } = useStaticQuery(graphql`
-  //   {
-  //     site {
-  //       siteMetadata {
-  //         name
-  //       }
-  //     }
-  //   }
-  // `);
+  const {
+    site: {
+      siteMetadata: { name },
+    },
+  } = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          name
+        }
+      }
+    }
+  `);
 
   return (
     <StyledNavigation>
       <Container maxWidth={1200}>
         <Inner>
-          <Brand to="/">The name</Brand>
+          <Brand to="/">{name}</Brand>
           <Nav>
             {items.map(({ label, to, href }) =>
               to ? (

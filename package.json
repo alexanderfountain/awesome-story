@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "build:storybook": "cross-env NODE_ENV=production build-storybook -c .storybook -o public/docs",
+    "build:storybook": "cross-env NODE_ENV=production build-storybook -c .storybook -o public/docs -s ./public",
     "clean": "rimraf ./.cache ./public",
     "start": "gatsby develop",
     "start:storybook": "cross-env NODE_ENV=production start-storybook -p 9000 -c .storybook",
