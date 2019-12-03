@@ -45,7 +45,7 @@ const Navigation = ({ path }) => {
     <StyledNavigation>
       <Container maxWidth={1200}>
         <Inner>
-          <Brand to="/">The name</Brand>
+          <Brand to="/">{name}</Brand>
           <Nav>
             {items.map(({ label, to, href }) =>
               to ? (
