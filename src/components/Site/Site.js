@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import { Theme } from '../ui/Theme';
 import { Navigation } from '../Navigation';
 import { Footer } from '../Footer';
-import { SEO } from './SEO';
+// import { SEO } from './SEO';
 import { Main } from './styled';
 
-const Site = ({ children, ...other }) => (
+const Site = ({ children, seo, ...other }) => (
   <Theme>
     {/* <SEO seo={seo} {...other} /> */}
     <Navigation {...other} />
-    <Main>{children}</Main>
-    <Footer {...other} />
+    {/* <Main>{children}</Main>
+    <Footer {...other} /> */}
   </Theme>
 );
 
