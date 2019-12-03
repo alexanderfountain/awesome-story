@@ -7,9 +7,9 @@ import { Footer } from '../Footer';
 import { SEO } from './SEO';
 import { Main } from './styled';
 
-const Site = ({ children, seo, ...other }) => (
+const Site = ({ children, ...other }) => (
   <Theme>
-    <SEO seo={seo} {...other} />
+    {/* <SEO seo={seo} {...other} /> */}
     <Navigation {...other} />
     <Main>{children}</Main>
     <Footer {...other} />
@@ -18,12 +18,12 @@ const Site = ({ children, seo, ...other }) => (
 
 Site.propTypes = {
   children: PropTypes.node,
-  seo: SEO.propTypes.seo,
+  // seo: SEO.propTypes.seo,
 };
 
 Site.defaultProps = {
   children: null,
-  seo: {},
+  // seo: {},
 };
 
 export { Site };
