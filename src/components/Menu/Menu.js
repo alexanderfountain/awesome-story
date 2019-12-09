@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 // import Logo from "../Logo/Logo";
-import { StaticQuery, graphql } from "gatsby";
-import { Link } from "gatsby";
+import { StaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 const MenuStyled = styled.header`
   width: calc(100% - 250px);
@@ -18,7 +18,7 @@ const MenuStyled = styled.header`
         font-size: 22px;
         color: ${props => props.themes.color.black};
         ${props =>
-          props.theme.name == "dark" &&
+          props.theme.name == 'dark' &&
           css`
             color: ${props => props.themes.color.white};
           `};
@@ -63,7 +63,7 @@ const MenuStyled = styled.header`
 
 const Menu = ({ data, theme, themes }) => (
   <MenuStyled theme={theme} themes={themes}>
-    {/* <ul className="main-menu">
+    <ul className="main-menu">
       {data.site.siteMetadata.menu.map((menuitem, index) => (
         <li key={index}>
           <Link to={menuitem.link}>{menuitem.name}</Link>
@@ -78,52 +78,28 @@ const Menu = ({ data, theme, themes }) => (
           )}
         </li>
       ))}
-    </ul> */}
-    {console.log(data)}
+    </ul>
   </MenuStyled>
 );
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        menu {
-          name
-          link
-          submenu {
-            name
-            link
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            menu {
+              name
+              link
+              submenu {
+                name
+                link
+              }
+            }
           }
         }
       }
-    }
-  }
-`;
-
-export default Menu;
-
-// export default props => (
-//   <StaticQuery
-//     query={graphql`
-//       query {
-//         site {
-//           siteMetadata {
-//             menu {
-//               name
-//               link
-//               submenu {
-//                 name
-//                 link
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `}
-//     render={data => <Menu data={data} {...props} />}
-//   />
-// );
-
-// Header.propTypes = {
-//   light: PropTypes.bool
-// };
+    `}
+    render={data => <Menu data={data} {...props} />}
+  />
+);
