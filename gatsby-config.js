@@ -6,6 +6,30 @@ module.exports = {
     keywords: ['gatsby', 'gatsbyjs', 'gatsby starter', 'github'],
     type: 'website',
     image: 'https://awesome-gatsby-starter.netlify.com/ok.png',
+    menu: [
+      {
+        name: 'Home',
+        link: '/',
+      },
+      {
+        name: 'About',
+        link: '/about',
+        submenu: [
+          {
+            name: 'Submenu Item 1',
+            link: '/submenuitem1',
+          },
+          {
+            name: 'Submenu Item 2',
+            link: '/submenuitem2',
+          },
+        ],
+      },
+      {
+        name: 'Contact',
+        link: '/contact',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -15,15 +39,6 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        extensions: ['.mdx', '.md'],
-        defaultLayouts: {
-          pages: require.resolve('./src/templates/Page/index.js'),
-        },
       },
     },
     'gatsby-plugin-sharp',
@@ -44,7 +59,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/assets/ok.png', // This path is relative to the root of the site
+        //icon: '', // This path is relative to the root of the site
       },
     },
 
